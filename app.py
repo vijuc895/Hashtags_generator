@@ -54,7 +54,7 @@ def hello():
                     comments.append(post.comments)
                     count+=1
                     print("collected",count,"post")
-                    if count == 75:
+                    if count == 150:
                         break   
         print("data scraper started")
         scraper(keyword)
