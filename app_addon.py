@@ -28,6 +28,8 @@ def hello():
         keyword=request.form['name']
         keyword=keyword.lower()
         keyword=keyword.split(" ")
+        length=len(keyword)
+        iters=int(180/length)
         print(keyword)
         data = pd.DataFrame(columns=['username', 'following','datetime','followers','likes','comments', 'caption_hashtags'])
         info = []
@@ -56,7 +58,7 @@ def hello():
                     comments.append(post.comments)
                     count+=1
                     print("collected",count,"post")
-                    if count ==5:
+                    if count ==iters:
                         break   
         print("data scraper started")
         for i in keyword:
